@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MDApplication</string>
+    <string name="favoritos">Los 5 Favoritos</string>
+    <string name="mascotas">Mascotas</string>
+</resources>
