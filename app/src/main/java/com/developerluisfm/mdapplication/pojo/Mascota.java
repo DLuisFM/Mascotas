@@ -1,4 +1,4 @@
-package com.developerluisfm.mdapplication;
+package com.developerluisfm.mdapplication.pojo;
 
 /**
  * Created by LuisFM on 28/05/16.

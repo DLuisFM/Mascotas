@@ -3,18 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity">
+    tools:context="com.developerluisfm.mdapplication.AcercaActivity">
 
     <include android:id="@+id/toolbar"
-        layout="@layout/actionbar"
-        />
+        layout="@layout/actionbar" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvMascotas"
-        android:layout_margin="@dimen/margin"
-        android:scrollbars="vertical"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"/>
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bio"
+        android:layout_below="@+id/toolbar" />
+
 
 </RelativeLayout>

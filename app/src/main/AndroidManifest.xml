@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.developerluisfm.mdapplication">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,13 +18,25 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetalleActivity" />
-        <activity android:name=".ListaActivity" ></activity>
-        <activity android:name=".FavoritosActivity"
+        <activity android:name=".ListaActivity" />
+        <activity
+            android:name=".PerfilActivity"
             android:parentActivityName=".ListaActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ListaActivity" />
         </activity>
+        <activity android:name=".ContactoActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaActivity" />
+        </activity>
+        <activity android:name=".AcercaActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ListaActivity" />
+        </activity>
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>

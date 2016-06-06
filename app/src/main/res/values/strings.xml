@@ -2,4 +2,14 @@
     <string name="app_name">MDApplication</string>
     <string name="favoritos">Los 5 Favoritos</string>
     <string name="mascotas">Mascotas</string>
+    <string name="contacto">Contacto</string>
+    <string name="acerca">Acerca De</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="mensaje">Mensaje</string>
+    <string name="enviar">Enviar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

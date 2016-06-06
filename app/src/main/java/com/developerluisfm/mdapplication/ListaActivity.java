@@ -2,7 +2,6 @@ package com.developerluisfm.mdapplication;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.developerluisfm.mdapplication.adapter.MascotaAdapter;
+import com.developerluisfm.mdapplication.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -36,16 +38,15 @@ public class ListaActivity extends AppCompatActivity {
         listaMascotas.setLayoutManager(lm);
 
         inicializarMascotas();
-        AdaptadorMascota adaptadorMascota = new AdaptadorMascota(mascotas);
-        listaMascotas.setAdapter(adaptadorMascota);
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas);
+        listaMascotas.setAdapter(mascotaAdapter);
 
         FloatingActionButton bu = (FloatingActionButton) findViewById(R.id.fab);
 
         bu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(getBaseContext(), FavoritosActivity.class);
-                //startActivity(intent);
+
             }
         });
         //finish();
@@ -78,16 +79,22 @@ public class ListaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+
+        if (id == R.id.contacto) {
+            Intent intent = new Intent(getBaseContext(), ContactoActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.acerca) {
+            Intent intent = new Intent(getBaseContext(), AcercaActivity.class);
+            startActivity(intent);
             return true;
         }
 
         if (id == R.id.action_favorite) {
-            Intent intent = new Intent(getBaseContext(), FavoritosActivity.class);
+            Intent intent = new Intent(getBaseContext(), PerfilActivity.class);
             startActivity(intent);
             return true;
         }

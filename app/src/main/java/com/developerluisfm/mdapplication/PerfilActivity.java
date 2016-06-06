@@ -9,11 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import com.developerluisfm.mdapplication.adapter.MascotaAdapter;
+import com.developerluisfm.mdapplication.pojo.Mascota;
 
 import java.util.ArrayList;
 
-public class FavoritosActivity extends AppCompatActivity {
+public class PerfilActivity extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     RecyclerView listaMascotas;
@@ -40,8 +42,8 @@ public class FavoritosActivity extends AppCompatActivity {
         listaMascotas.setLayoutManager(lm);
 
         inicializarMascotas();
-        AdaptadorMascota adaptadorMascota = new AdaptadorMascota(mascotas);
-        listaMascotas.setAdapter(adaptadorMascota);
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas);
+        listaMascotas.setAdapter(mascotaAdapter);
 
 
 
@@ -84,12 +86,12 @@ public class FavoritosActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.contacto) {
             return true;
         }
 
         if (id == R.id.action_favorite) {
-            Intent intent = new Intent(getBaseContext(), FavoritosActivity.class);
+            Intent intent = new Intent(getBaseContext(), PerfilActivity.class);
             startActivity(intent);
             return true;
         }

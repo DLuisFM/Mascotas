@@ -1,40 +1,41 @@
-package com.developerluisfm.mdapplication;
+package com.developerluisfm.mdapplication.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.developerluisfm.mdapplication.R;
+import com.developerluisfm.mdapplication.pojo.Mascota;
 
 import java.util.ArrayList;
 
 /**
  * Created by LuisFM on 28/05/16.
  */
-public class AdaptadorMascota extends RecyclerView.Adapter<AdaptadorMascota.MascotaviewHolder> {
+public class MascotaAdapterPerfil extends RecyclerView.Adapter<MascotaAdapterPerfil.MascotaviewHolder> {
 
     ArrayList<Mascota> mascotas;
     Context context;
 
-    public AdaptadorMascota(ArrayList<Mascota> mascotas){
+    public MascotaAdapterPerfil(ArrayList<Mascota> mascotas){
         this.mascotas = mascotas;
     }
 
     @Override
     public MascotaviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         this.context = parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mascota, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_mascota_perfil, parent, false);
         return new MascotaviewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MascotaviewHolder mascotaviewHolder, int position) {
         Mascota mascota = mascotas.get(position);
-        mascotaviewHolder.nombre.setText(mascota.getNombre());
+        //mascotaviewHolder.nombre.setText(mascota.getNombre());
         mascotaviewHolder.foto.setImageResource(mascota.getFoto());
         mascotaviewHolder.puntos.setText(mascota.getPuntos()+"");
 
@@ -56,14 +57,14 @@ public class AdaptadorMascota extends RecyclerView.Adapter<AdaptadorMascota.Masc
 
             super(itemView);
 
-            nombre = (TextView) itemView.findViewById(R.id.tvNombre);
+            //nombre = (TextView) itemView.findViewById(R.id.tvNombre);
             puntos = (TextView) itemView.findViewById(R.id.tvNumero);
             foto   = (ImageView) itemView.findViewById(R.id.ivFoto);
-            icono   = (TextView) itemView.findViewById(R.id.tvIcono);
+            //icono   = (TextView) itemView.findViewById(R.id.tvIcono);
 
 
             // Aumentar ranking de mascota
-            icono.setOnClickListener(new View.OnClickListener() {
+          /*  icono.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int numero = 1;
@@ -78,10 +79,8 @@ public class AdaptadorMascota extends RecyclerView.Adapter<AdaptadorMascota.Masc
                         puntos.setText(""+(numero+numero2));
                     }
 
-
                 }
-            });
-
+//            });*/
 
         }
     }
