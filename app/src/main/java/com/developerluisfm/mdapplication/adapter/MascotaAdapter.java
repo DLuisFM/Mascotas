@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.developerluisfm.mdapplication.R;
+import com.developerluisfm.mdapplication.db.ContructorDatos;
 import com.developerluisfm.mdapplication.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
     ArrayList<Mascota> mascotas;
     Context context;
 
-    public MascotaAdapter(ArrayList<Mascota> mascotas){
+    public MascotaAdapter(ArrayList<Mascota> mascotas ){
         this.mascotas = mascotas;
     }
 
@@ -33,11 +34,25 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
     }
 
     @Override
-    public void onBindViewHolder(MascotaviewHolder mascotaviewHolder, int position) {
-        Mascota mascota = mascotas.get(position);
+    public void onBindViewHolder(final MascotaviewHolder mascotaviewHolder, int position) {
+        final Mascota mascota = mascotas.get(position);
         mascotaviewHolder.nombre.setText(mascota.getNombre());
         mascotaviewHolder.foto.setImageResource(mascota.getFoto());
-        mascotaviewHolder.puntos.setText(mascota.getPuntos()+"");
+        mascotaviewHolder.puntos.setText(""+mascota.getLikes());
+
+
+        // Aumentar ranking de mascota
+        mascotaviewHolder.icono.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ContructorDatos contructorDatos = new ContructorDatos(context);
+                contructorDatos.insertarContactoLike(mascota);
+
+                mascotaviewHolder.puntos.setText(""+contructorDatos.obtenerLikes(mascota));
+
+
+            }
+        });
 
     }
 
@@ -63,25 +78,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
             icono   = (TextView) itemView.findViewById(R.id.tvIcono);
 
 
-            // Aumentar ranking de mascota
-            icono.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int numero = 1;
 
-                    int numero2 =0;
-
-                    try{
-                       numero2 = Integer.parseInt(puntos.getText().toString());
-                    }catch (Exception ex){
-
-                    }finally {
-                        puntos.setText(""+(numero+numero2));
-                    }
-
-
-                }
-            });
 
 
         }

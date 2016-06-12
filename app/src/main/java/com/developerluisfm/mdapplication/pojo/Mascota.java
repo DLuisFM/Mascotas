@@ -9,15 +9,19 @@ public class Mascota {
     public String nombre;
     public int edad;
     public int foto;
-    public int puntos;
+    public int likes;
 
-    public Mascota(int id, String nombre, int edad, int foto, int puntos){
+    public Mascota(){
+
+    }
+
+    public Mascota(int id, String nombre, int edad, int foto, int likes){
 
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.foto = foto;
-        this.puntos = puntos;
+        this.likes = likes;
 
     }
 
@@ -53,11 +57,11 @@ public class Mascota {
         this.nombre = nombre;
     }
 
-    public int getPuntos() {
-        return puntos;
+    public int getLikes() {
+        return likes;
     }
 
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 }

@@ -93,7 +93,7 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_favorite) {
-            Intent intent = new Intent(getBaseContext(), PerfilActivity.class);
+            Intent intent = new Intent(getBaseContext(), FavoritosActivity.class);
             startActivity(intent);
             return true;
         }

@@ -14,17 +14,19 @@ import android.view.ViewGroup;
 import com.developerluisfm.mdapplication.R;
 import com.developerluisfm.mdapplication.adapter.MascotaAdapter;
 import com.developerluisfm.mdapplication.pojo.Mascota;
+import com.developerluisfm.mdapplication.present.ListaPresent;
 
 import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ListaFragment extends Fragment {
+public class ListaFragment extends Fragment implements IListaFragment {
 
     ArrayList<Mascota> mascotas;
     RecyclerView listaMascotas;
     Context context;
+    ListaPresent listaPresent;
 
 
     public ListaFragment() {
@@ -36,17 +38,13 @@ public class ListaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_lista, container, false);
+
         context = container.getContext();
 
-
         listaMascotas = (RecyclerView) view.findViewById(R.id.rvMascotas);
-        LinearLayoutManager lm = new LinearLayoutManager(context);
-        lm.setOrientation(LinearLayoutManager.VERTICAL);
-        listaMascotas.setLayoutManager(lm);
 
-        inicializarMascotas();
-        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas);
-        listaMascotas.setAdapter(mascotaAdapter);
+        listaPresent = new ListaPresent(getContext(), this );
+
 
         FloatingActionButton bu = (FloatingActionButton) view.findViewById(R.id.fab);
 
@@ -62,6 +60,7 @@ public class ListaFragment extends Fragment {
 
 
 
+    /*
     public void inicializarMascotas(){
 
         Mascota mascota1 = new Mascota(1,"Tofi",1,R.drawable.p1,0);
@@ -78,7 +77,25 @@ public class ListaFragment extends Fragment {
         mascotas.add(mascota4);
         mascotas.add(mascota5);
 
+    }*/
+
+
+    @Override
+    public void crearLineraLayout() {
+        LinearLayoutManager lm = new LinearLayoutManager(context);
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        listaMascotas.setLayoutManager(lm);
     }
 
+    @Override
+    public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
+        MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas);
+        iniciarAdaptador(mascotaAdapter);
+        return mascotaAdapter;
+    }
 
+    @Override
+    public void iniciarAdaptador(MascotaAdapter adapter) {
+        listaMascotas.setAdapter(adapter);
+    }
 }

@@ -37,7 +37,7 @@ public class MascotaAdapterPerfil extends RecyclerView.Adapter<MascotaAdapterPer
         Mascota mascota = mascotas.get(position);
         //mascotaviewHolder.nombre.setText(mascota.getNombre());
         mascotaviewHolder.foto.setImageResource(mascota.getFoto());
-        mascotaviewHolder.puntos.setText(mascota.getPuntos()+"");
+        mascotaviewHolder.puntos.setText(mascota.getLikes()+"");
 
     }
 

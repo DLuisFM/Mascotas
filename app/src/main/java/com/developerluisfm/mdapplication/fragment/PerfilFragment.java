@@ -35,9 +35,10 @@ public class PerfilFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
-        lLayout = new GridLayoutManager(container.getContext(), 3);
+
 
         listaMascotas = (RecyclerView) view.findViewById(R.id.rvMascotas);
+        lLayout = new GridLayoutManager(container.getContext(), 3);
         listaMascotas.setHasFixedSize(true);
         listaMascotas.setLayoutManager(lLayout);
 
@@ -69,5 +70,6 @@ public class PerfilFragment extends Fragment {
         mascotas.add(mascota5);
 
     }
+
 
 }

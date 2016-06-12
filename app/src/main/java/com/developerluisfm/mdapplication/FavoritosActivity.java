@@ -11,11 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.developerluisfm.mdapplication.adapter.MascotaAdapter;
+import com.developerluisfm.mdapplication.db.BaseDatos;
 import com.developerluisfm.mdapplication.pojo.Mascota;
 
 import java.util.ArrayList;
 
-public class PerfilActivity extends AppCompatActivity {
+public class FavoritosActivity extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     RecyclerView listaMascotas;
@@ -51,19 +52,24 @@ public class PerfilActivity extends AppCompatActivity {
 
     public void inicializarMascotas(){
 
-        Mascota mascota1 = new Mascota(1,"Tofi",1,R.drawable.p1,0);
+        mascotas = new ArrayList<Mascota>();
+
+        /*Mascota mascota1 = new Mascota(1,"Tofi",1,R.drawable.p1,0);
         Mascota mascota2 = new Mascota(2,"Oreo",3,R.drawable.p2,2);
         Mascota mascota3 = new Mascota(3,"Black",2,R.drawable.p3,1);
         Mascota mascota4 = new Mascota(4,"Nii",6,R.drawable.p4,3);
         Mascota mascota5 = new Mascota(5,"Sisi",4,R.drawable.p5,4);
 
-        mascotas = new ArrayList<Mascota>();
+
 
         mascotas.add(mascota1);
         mascotas.add(mascota2);
         mascotas.add(mascota3);
         mascotas.add(mascota4);
-        mascotas.add(mascota5);
+        mascotas.add(mascota5);*/
+
+        BaseDatos db = new BaseDatos(getBaseContext());
+        mascotas = db.consultarMascotasFavoritas();
 
     }
 
@@ -91,7 +97,7 @@ public class PerfilActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_favorite) {
-            Intent intent = new Intent(getBaseContext(), PerfilActivity.class);
+            Intent intent = new Intent(getBaseContext(), FavoritosActivity.class);
             startActivity(intent);
             return true;
         }

@@ -2,6 +2,7 @@ package com.developerluisfm.mdapplication;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -62,10 +64,26 @@ public class ContactoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //send();
-                String email = "floresmiranda1593@gmail.com";//emailEdit.getText().toString();
-                String subject = "pruebassss";//subjectEdit.getText().toString();
-                String message = "Pruebas de pruebas preubas";//messageEdit.getText().toString();
-                sendMail(email, subject, message);
+                //String email = "floresmiranda1593@gmail.com";//emailEdit.getText().toString();
+                //String subject = "pruebassss";//subjectEdit.getText().toString();
+                //String message = "Pruebas de pruebas preubas";//messageEdit.getText().toString();
+                //sendMail(email, subject, message);
+
+                Email emails = new Email();
+                emails.execute("floresmiranda1593@gmail.com", "prueba de prueba");
+
+                try {
+                    Object ob = emails.get();
+                    if (ob != null) {
+                        Snackbar.make(v,ob.toString(),Snackbar.LENGTH_LONG).show();
+                    }else{
+                        Snackbar.make(v,"Mensaje no enviado",Snackbar.LENGTH_LONG).show();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
 
 
             }
