@@ -1,23 +1,33 @@
 # Mascotas
 
 
+
+
 Instrucciones
 
-Partiendo del Proyecto anterior desarrolla la siguiente aplicación.
+Después de publicar tu cuenta en la discusión anterior:
+
+Integra Retrofit a tu proyecto.
+Este es el sitio oficial para hacerlo http://square.github.io/retrofit/
+
+2. Ahora, con ayuda del siguiente enlace: https://www.instagram.com/developer/endpoints/
+
+Simula un timeline en tu aplicación donde muestres las fotos recientes de los usuarios que han aprobado el acceso a tu aplicación en el modo Sandbox.
+Genera un item en el menú como se muestra en la maqueta. Éste nos llevará a una pantalla donde asignaremos el usuario principal de la aplicación.
+El usuario que asignemos será del cual estemos mostrando sus fotos de perfil, como se muestra.
+
+3. Crea sus respectivos Deserializadores con GSON y presenta la información en la aplicación móvil.
+
+Cuando tu proyecto esté listo, comparte con tus compañeros lo siguiente:
+
+Un documento en formato PDF donde describas los Endpoints que utilizaste y pantallazos de tu aplicación.
+Un enlace a un video de youtube donde muestres un recorrido completo de tu aplicación móvil, con todas las tareas que llevas acumuladas desde el curso anterior.
+Enlace al proyecto en GitHub
 Review criteriamenos 
-Tomando como punto de partida la funcionalidad que generaste para mostrar las ultimas 5 mascotas, es momento de dar persistencia a esta información.
+Tus compañeros evaluarán que:
 
-Estas 5 mascotas estarán cambiando conforme el usuario da rating a una o varias, mascotas. En el POJO que estas manejando para la entidad mascota genera un identificador el cuál deberá ser único y te permita diferenciar una mascota de otra.
-
-Crea un modelo de base de datos que contenga una tabla llamada mascota esta debe ser idéntica al POJO de mascota, de tal forma que cuando una persona de rating a una foto puedas guardar los datos completos de la entidad en la base de datos. Para fines de este ejercicio tu tabla solo estará guardando las últimas 5 mascotas con rating.
-
-Pantallazos de la aplicación, modelo de base de datos y enlace al proyecto en GitHub
-
-
-/******************
-
-Favoritos
-
-Solo las mascotas con mas de 5 Likes se mostraran en el activity Favoritos.
-De las mascotas con mas de 5 Likes solo se elegirán las 5 con mayor ranquin y se mostraran de mayor a menor.
-
+Tu proyecto corra
+Se haya implementado la librería Retrofit
+Se hayan implementado los Endpoints señalados del API de Instagram
+Estén presentes las clases modelo, modelo response y sus clases deserializadoras
+El proyecto tenga implementado el patrón Modelo Vista Presentador
