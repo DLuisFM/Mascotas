@@ -16,4 +16,6 @@ public interface IListaFragment {
 
     public void iniciarAdaptador(MascotaAdapter adapter);
 
+    public void generarGridLayout();
+
 }

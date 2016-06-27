@@ -10,6 +10,7 @@ public class Mascota {
     public int edad;
     public int foto;
     public int likes;
+    private String urlFoto;
 
     public Mascota(){
 
@@ -64,4 +65,13 @@ public class Mascota {
     public void setLikes(int likes) {
         this.likes = likes;
     }
+
+    public String getUrlFoto() {
+        return urlFoto;
+    }
+
+    public void setUrlFoto(String urlFoto) {
+        this.urlFoto = urlFoto;
+    }
+
 }

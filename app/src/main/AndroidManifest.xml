@@ -17,26 +17,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetalleActivity" />
-        <activity android:name=".ListaActivity" />
         <activity
             android:name=".FavoritosActivity"
-            android:parentActivityName=".ListaActivity">
+            android:parentActivityName=".MenuActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaActivity" />
+                android:value=".MenuActivity" />
         </activity>
         <activity android:name=".ContactoActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaActivity" />
+                android:value=".MenuActivity" />
         </activity>
         <activity android:name=".AcercaActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ListaActivity" />
+                android:value=".MenuActivity" />
         </activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".CuentaActivity"></activity>
     </application>
 
 </manifest>

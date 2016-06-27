@@ -25,6 +25,18 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/margin_imge_view"/>
 
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textSize="@dimen/size_text"
+            android:gravity="center_vertical|left"
+            android:layout_gravity="center_horizontal" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -34,9 +46,8 @@
 
             <TextView
                 android:id="@+id/tvIcono"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:textStyle="bold"
                 android:layout_marginRight="@dimen/margin"
                 android:textSize="@dimen/size_text"
@@ -44,24 +55,12 @@
                 android:drawableLeft="@drawable/ic_hueso"/>
 
             <TextView
-                android:id="@+id/tvNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Nombre"
-                android:textStyle="bold"
-                android:textSize="@dimen/size_text"
-                android:gravity="center_vertical|left"/>
-
-            <TextView
                 android:id="@+id/tvNumero"
-                android:layout_width="wrap_content"
+
+                android:layout_width="110dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="3"
-                android:gravity="center_vertical|right"
+                android:gravity="center"
                 android:textStyle="bold"
                 android:textSize="@dimen/size_text"
                 android:drawableRight="@drawable/ic_hueso_color"/>

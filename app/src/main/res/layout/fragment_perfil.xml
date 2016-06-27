@@ -35,10 +35,23 @@
         android:id="@+id/rvMascotas"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="399dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/user_ins" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Usuario Instagram: "
+        android:textSize="@dimen/size_text"
+        android:id="@+id/user_ins"
         android:layout_below="@+id/view"
         android:layout_alignParentLeft="true"
+        android:gravity="center"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

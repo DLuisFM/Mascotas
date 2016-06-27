@@ -3,8 +3,10 @@ package com.developerluisfm.mdapplication.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -33,7 +35,7 @@ public class ListaFragment extends Fragment implements IListaFragment {
 
     }
 
-
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -43,17 +45,8 @@ public class ListaFragment extends Fragment implements IListaFragment {
 
         listaMascotas = (RecyclerView) view.findViewById(R.id.rvMascotas);
 
-        listaPresent = new ListaPresent(getContext(), this );
+        listaPresent = new ListaPresent(getContext(), this, 0 );
 
-
-        FloatingActionButton bu = (FloatingActionButton) view.findViewById(R.id.fab);
-
-        bu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         return view;
     }
@@ -88,9 +81,16 @@ public class ListaFragment extends Fragment implements IListaFragment {
     }
 
     @Override
+    public void generarGridLayout() {
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        listaMascotas.setLayoutManager(gridLayoutManager);
+    }
+
+    @Override
     public MascotaAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
         MascotaAdapter mascotaAdapter = new MascotaAdapter(mascotas);
-        iniciarAdaptador(mascotaAdapter);
+        //iniciarAdaptador(mascotaAdapter);
+
         return mascotaAdapter;
     }
 
@@ -98,4 +98,6 @@ public class ListaFragment extends Fragment implements IListaFragment {
     public void iniciarAdaptador(MascotaAdapter adapter) {
         listaMascotas.setAdapter(adapter);
     }
+
+
 }

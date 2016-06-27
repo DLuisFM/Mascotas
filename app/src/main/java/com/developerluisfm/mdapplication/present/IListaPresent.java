@@ -7,7 +7,8 @@ public interface IListaPresent {
 
     public void obtenrMascota();
 
-    public void mostrarContactoRV();
+    public void mostrarMascotaRV();
 
+    void obtenerMediosRecientes();
 
 }

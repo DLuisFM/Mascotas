@@ -98,6 +98,12 @@ public class MenuActivity extends AppCompatActivity {
             return true;
         }
 
+        if (id == R.id.action_config) {
+            Intent intent = new Intent(getBaseContext(), CuentaActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

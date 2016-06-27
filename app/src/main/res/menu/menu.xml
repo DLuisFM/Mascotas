@@ -19,5 +19,9 @@
         app:showAsAction="never"/>
 
 
+    <item android:id="@+id/action_config"
+        android:title="@string/configcuenta"
+        app:showAsAction="never"/>
+
 
 </menu>

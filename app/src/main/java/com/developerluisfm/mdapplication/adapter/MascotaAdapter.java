@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.developerluisfm.mdapplication.R;
 import com.developerluisfm.mdapplication.db.ContructorDatos;
 import com.developerluisfm.mdapplication.pojo.Mascota;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -37,12 +38,17 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
     public void onBindViewHolder(final MascotaviewHolder mascotaviewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
         mascotaviewHolder.nombre.setText(mascota.getNombre());
-        mascotaviewHolder.foto.setImageResource(mascota.getFoto());
+        //mascotaviewHolder.foto.setImageResource(mascota.getFoto());
         mascotaviewHolder.puntos.setText(""+mascota.getLikes());
+
+        Picasso.with(context)
+                .load(mascota.getUrlFoto())
+                .placeholder(R.drawable.p1)
+                .into(mascotaviewHolder.foto);
 
 
         // Aumentar ranking de mascota
-        mascotaviewHolder.icono.setOnClickListener(new View.OnClickListener() {
+       /* mascotaviewHolder.icono.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ContructorDatos contructorDatos = new ContructorDatos(context);
@@ -53,6 +59,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
 
             }
         });
+    */
 
     }
 
@@ -78,7 +85,7 @@ public class MascotaAdapter extends RecyclerView.Adapter<MascotaAdapter.Mascotav
             icono   = (TextView) itemView.findViewById(R.id.tvIcono);
 
 
-
+            icono.setVisibility(View.GONE);
 
 
         }
